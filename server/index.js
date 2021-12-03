@@ -20,11 +20,24 @@ app.use('/', express.static(path.join(__dirname, '..', 'frontend', 'dist')))
 
 app.get('/investments', (req, res) => {
   client
-    .query('select * from investments')
+    .query('SELECT * FROM investments ORDER BY total_val DESC')
     .then(results => {
         res.statusCode = 200;
         res.send(results);
       })
+    .catch(err => { 
+      console.error(err);
+      res.sendStatus(404);
+    })
+})
+
+app.post('/investments', (req, res) => {
+  const {investmentName, investmentStr, accountValue, totalContribution, gains} = req.body;
+  client
+    .query(`INSERT INTO investments (name, total_val, contribution, gain, investment_str)
+    VALUES ($1, ${accountValue}, ${totalContribution}, ${gains}, $2)`, 
+    [investmentName, investmentStr])
+    .then(() => { res.sendStatus(201); })
     .catch(err => { 
       console.error(err);
       res.sendStatus(404);
