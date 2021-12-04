@@ -70,6 +70,7 @@ body {
   border-radius: 50px;
   font-size: xx-large;
   margin: 25px;
+  cursor: pointer;
 }
 
 .clearButton {
@@ -81,6 +82,7 @@ body {
   border-radius: 20px;
   font-size: larger;
   font-weight: bold;
+  cursor: pointer;
 }
 
 .investment {
@@ -126,4 +128,5 @@ body {
   border-radius: 50px;
   font-weight: bold;
   font-size: large;
+  cursor: pointer;
 }
