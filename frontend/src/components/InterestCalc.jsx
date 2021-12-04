@@ -13,16 +13,15 @@ const InterestCalc = () => {
     axios
       .get('/investments')
       .then(results => { 
-        console.log(results.data.rows);
         setInvestments(results.data.rows);
       })
-      .catch(err => console.log(err))
+      .catch(err => { console.error(err); })
   }, [currentInvestment])
 
   return (
     <div>
       <Header />
-      <div>
+      <div className='mainContainer'>
         <InterestForm setCurrentInvestment={setCurrentInvestment}/>
         <InvestmentList investments={investments}/>
       </div>

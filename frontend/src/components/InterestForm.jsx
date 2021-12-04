@@ -18,49 +18,55 @@ const InterestForm = ({ setCurrentInvestment }) => {
   }
 
   return (
-    <div>
-      <h1>Interest Form</h1>
-      <div>
-        <div><b>What would you like to name this investment?</b></div>
+    <div className='form'>
+      <h2 className='subheader'>Interest Calculator</h2>
+      <div className='qContainer'>
+        <div className='question'>What would you like to name this investment?</div>
         <input
+          className='input'
           value={name}
           onChange={(e) => { setName(e.target.value); }}
         />
       </div>
-      <div>
-        <div><b>What is your initial investment?</b></div>
+      <div className='qContainer'>
+        <div className='question'>What is your initial investment?</div>
         <input
+          className='input'
           value={initialVal}
           onChange={(e) => { setInitialVal(Number(e.target.value)); }}
           type="number"
         />
       </div>
-      <div>
-        <div><b>What can you contribute monthly?</b></div>
+      <div className='qContainer'>
+        <div className='question'>What can you contribute monthly?</div>
         <input
+          className='input'
           value={monthlyCont}
           onChange={(e) => { setMonthlyCont(Number(e.target.value)); }}
           type="number"
         />
       </div>
-      <div>
-        <div><b>How many years do you plan to save?</b></div>
+      <div className='qContainer'>
+        <div className='question'>How many years do you plan to save?</div>
         <input
+          className='input'
           value={savingYears}
           onChange={(e) => { setSavingYears(Number(e.target.value)); }}
           type="number"
         />
       </div>
-      <div>
-        <div><b>What is your estimated annual interest rate?</b></div>
+      <div className='qContainer'>
+        <div className='question'>What is your estimated annual interest rate?</div>
         <input
+          className='input'
           value={interestRate}
-          placeholder="Example: '10' for 10%"
+          placeholder="E.g. '10' for 10%"
           onChange={(e) => { setInterestRate(Number(e.target.value)); }}
           type="number"
         />
       </div>
-      <button 
+      <button
+        className='button' 
         onClick={() => { handleFormSubmit(); }}
       >
         See your potential gains!
