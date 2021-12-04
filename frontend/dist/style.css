@@ -5,6 +5,16 @@ body {
   padding: 0 10%;
 }
 
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input:focus::placeholder {
+  color: transparent;
+}
+
 .mainContainer {
   display: flex;
   flex-direction: row;
