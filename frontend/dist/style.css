@@ -71,18 +71,6 @@ input:focus::placeholder {
   font-weight: bold;
 }
 
-.input input {
-  padding-left:18px;
-}
-
-.input:before {
-  position: absolute;
-  top: 0;
-  content:"€";
-  left: 5px;
-  color: black;
-}
-
 .button {
   width: 400px;
   height: 80px;

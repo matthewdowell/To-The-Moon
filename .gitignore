@@ -1,4 +1,4 @@
-client/dist/bundle.js
+frontend/dist/bundle.js
 package-lock.json
 node_modules/
 .env

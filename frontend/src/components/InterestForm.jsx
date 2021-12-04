@@ -40,8 +40,8 @@ const InterestForm = ({ setCurrentInvestment }) => {
       <div className='qContainer'>
         <div className='question'>What is your initial investment?</div>
         <input
-          placeholder="$"
           className='input'
+          style={{backgroundImage: `url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' version='1.1' height='40px' width='200px'><text x='10' y='27' fill='gray' font-size='20' font-family='arial'>$</text></svg>")`}}
           value={initialVal}
           onChange={(e) => { setInitialVal(Number(e.target.value)); }}
           type="number"
@@ -50,7 +50,7 @@ const InterestForm = ({ setCurrentInvestment }) => {
       <div className='qContainer'>
         <div className='question'>What can you contribute monthly?</div>
         <input
-          placeholder="$"
+          style={{backgroundImage: `url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' version='1.1' height='40px' width='200px'><text x='10' y='27' fill='gray' font-size='20' font-family='arial'>$</text></svg>")`}}
           className='input'
           value={monthlyCont}
           onChange={(e) => { setMonthlyCont(Number(e.target.value)); }}
