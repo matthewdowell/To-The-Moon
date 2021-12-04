@@ -2,6 +2,7 @@ body {
   font-family: Arial, Helvetica, sans-serif;
   background: cadetblue;
   color: white;
+  padding: 0 10%;
 }
 
 .mainContainer {
@@ -14,6 +15,8 @@ body {
   font-size: 3em;
   font-weight: bold;
   padding-top: 20px;
+  color: midnightblue;
+  border-bottom: 10px solid white;
 }
 
 .form {
@@ -25,11 +28,13 @@ body {
 
 .list {
   width: 50%;
+  margin-left: 100px;
 }
 
 .subheader {
   font-size: xx-large;
   text-align: center;
+  color: midnightblue;
 }
 
 .question {
@@ -52,7 +57,7 @@ body {
   margin: 10px;
   text-align: center;
   font-size: large;
-  color: cadetblue;
+  color: orangered;
   font-weight: bold;
 }
 
@@ -67,9 +72,58 @@ body {
   margin: 25px;
 }
 
+.clearButton {
+  height: 40px;
+  width: 130px;
+  color: white;
+  background: midnightblue;
+  border-color: midnightblue;
+  border-radius: 20px;
+  font-size: larger;
+  font-weight: bold;
+}
+
 .investment {
   text-align: center;
   margin: 10px;
   font-size: larger;
   font-weight: bold;
+}
+
+.currentInvestment {
+  background: limegreen;
+  font-size: x-large;
+  font-weight: bold;
+  text-align: center;
+  border-radius: 50px;
+  padding: 5%;
+  margin: 26px;
+}
+
+@keyframes inAnimation {
+  0% {
+    opacity: 0;
+    visibility: hidden;
+  }
+  100% {
+    opacity: 1;
+    visibility: visible;
+  }
+}
+
+.investmentContainer {
+  display: flex;
+}
+
+.deleteButton {
+  height: 30px;
+  padding: 7px;
+  line-height: 0px;
+  margin-top: 10px;
+  color: orangered;
+  background: white;
+  border: 3px solid white;
+  border-radius: 50px;
+  font-weight: bold;
+  font-size: large;
 }

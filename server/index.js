@@ -32,16 +32,28 @@ app.get('/investments', (req, res) => {
 })
 
 app.post('/investments', (req, res) => {
-  const {investmentName, investmentStr, accountValue, totalContribution, gains} = req.body;
+  const {investmentName, investmentStr, accountValue, totalContribution, gains, investmentStr2} = req.body;
   client
-    .query(`INSERT INTO investments (name, total_val, contribution, gain, investment_str)
-    VALUES ($1, ${accountValue}, ${totalContribution}, ${gains}, $2)`, 
-    [investmentName, investmentStr])
+    .query(`INSERT INTO investments (name, total_val, contribution, gain, investment_str, investment_str2)
+    VALUES ($1, ${accountValue}, ${totalContribution}, ${gains}, $2, $3)`, 
+    [investmentName, investmentStr, investmentStr2])
     .then(() => { res.sendStatus(201); })
     .catch(err => { 
       console.error(err);
       res.sendStatus(404);
     })
+})
+
+app.delete('/investments/:id', (req, res) => {
+  console.log('req params: ', req.params)
+  var { id } = req.params;
+  client
+    .query('DELETE FROM investments WHERE id = $1', [id])
+    .then(() => { res.sendStatus(204); })
+    .catch((err) => { 
+      console.error(err);
+      res.sendStatus(404);
+     })
 })
  
 

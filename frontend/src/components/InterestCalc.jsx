@@ -8,6 +8,7 @@ import Header from './Header.jsx';
 const InterestCalc = () => {
   const [investments, setInvestments] = useState([]);
   const [currentInvestment, setCurrentInvestment] = useState({});
+  const [list, setList] = useState(false);
 
   useEffect(() => {
     axios
@@ -16,14 +17,19 @@ const InterestCalc = () => {
         setInvestments(results.data.rows);
       })
       .catch(err => { console.error(err); })
-  }, [currentInvestment])
+  }, [currentInvestment, list])
 
   return (
     <div>
       <Header />
       <div className='mainContainer'>
         <InterestForm setCurrentInvestment={setCurrentInvestment}/>
-        <InvestmentList investments={investments}/>
+        <InvestmentList 
+          investments={investments} 
+          currentInvestment={currentInvestment}
+          list={list}
+          setList={setList}
+        />
       </div>
     </div>
   )

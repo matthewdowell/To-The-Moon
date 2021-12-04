@@ -17,12 +17,21 @@ const InterestForm = ({ setCurrentInvestment }) => {
       .catch(err => { console.error(err); })
   }
 
+  const clearForm = () => {
+    setName('');
+    setInitialVal('');
+    setMonthlyCont('');
+    setSavingYears('');
+    setInterestRate('');
+  }
+
   return (
     <div className='form'>
-      <h2 className='subheader'>Interest Calculator</h2>
+      <h2 className='subheader'>Compound Interest Calculator</h2>
       <div className='qContainer'>
         <div className='question'>What would you like to name this investment?</div>
         <input
+          placeholder="ex: retirement"
           className='input'
           value={name}
           onChange={(e) => { setName(e.target.value); }}
@@ -31,6 +40,7 @@ const InterestForm = ({ setCurrentInvestment }) => {
       <div className='qContainer'>
         <div className='question'>What is your initial investment?</div>
         <input
+          placeholder="$"
           className='input'
           value={initialVal}
           onChange={(e) => { setInitialVal(Number(e.target.value)); }}
@@ -40,6 +50,7 @@ const InterestForm = ({ setCurrentInvestment }) => {
       <div className='qContainer'>
         <div className='question'>What can you contribute monthly?</div>
         <input
+          placeholder="$"
           className='input'
           value={monthlyCont}
           onChange={(e) => { setMonthlyCont(Number(e.target.value)); }}
@@ -49,6 +60,7 @@ const InterestForm = ({ setCurrentInvestment }) => {
       <div className='qContainer'>
         <div className='question'>How many years do you plan to save?</div>
         <input
+          placeholder="years"
           className='input'
           value={savingYears}
           onChange={(e) => { setSavingYears(Number(e.target.value)); }}
@@ -60,7 +72,7 @@ const InterestForm = ({ setCurrentInvestment }) => {
         <input
           className='input'
           value={interestRate}
-          placeholder="E.g. '10' for 10%"
+          placeholder="'10' for 10%"
           onChange={(e) => { setInterestRate(Number(e.target.value)); }}
           type="number"
         />
@@ -70,6 +82,12 @@ const InterestForm = ({ setCurrentInvestment }) => {
         onClick={() => { handleFormSubmit(); }}
       >
         See your potential gains!
+      </button>
+      <button
+        className='clearButton'
+        onClick={() => { clearForm(); }}
+      >
+        Clear Form
       </button>
     </div>
   )
