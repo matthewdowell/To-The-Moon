@@ -13,7 +13,7 @@ const InvestmentList = ({ investments, currentInvestment, setList, list }) => {
   }
 
   return (
-    <div className='list' style={mountedStyle}>
+    <div className='list'>
       {currentInvestment.investmentStr && 
         <div 
           className='currentInvestment'
